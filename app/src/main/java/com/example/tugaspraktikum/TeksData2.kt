@@ -7,5 +7,6 @@ package com.example.TugasPraktikum
 fun FormDataDiriStyled(modifier: Modifier = Modifier) {
     // states
     var namaInput by remember { mutableStateOf("") }
+    var alamatInput by remember { mutableStateOf("") }
 
 
