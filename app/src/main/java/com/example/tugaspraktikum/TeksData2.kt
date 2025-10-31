@@ -228,7 +228,22 @@ fun FormDataDiriStyled(modifier: Modifier = Modifier) {
 
                     }
                 }
+
             }
+            Spacer(modifier = Modifier.height(12.dp))
+        }
+    }
+    // Auto-scroll ke bawah saat hasil muncul supaya langsung terlihat
+    LaunchedEffect(isSubmitted) {
+        if (isSubmitted) {
+            // sedikit delay agar layout selesai measure dulu
+            delay(80)
+            scrollState.animateScrollTo(scrollState.maxValue)
+        }
+    }
+}
+
+
 
 
 
