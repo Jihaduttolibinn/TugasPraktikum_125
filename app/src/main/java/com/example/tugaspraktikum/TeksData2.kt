@@ -16,6 +16,8 @@ fun FormDataDiriStyled(modifier: Modifier = Modifier) {
     var submittedStatus by remember { mutableStateOf("") }
     var submittedAlamat by remember { mutableStateOf("") }
 
+    var isSubmitted by remember { mutableStateOf(false) }
+
 
 
 
