@@ -28,6 +28,15 @@ fun FormDataDiriStyled(modifier: Modifier = Modifier) {
     val cardResultBg = Color(0xFF222222)
     val cardResultText = Color.White
 
+    // scroll state untuk form + result (di dalam card)
+    val scrollState = rememberScrollState()
+
+    Surface(
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color(0xFFF8EAF6))
+    )
+
 
 
 
