@@ -111,6 +111,24 @@ fun FormDataDiriStyled(modifier: Modifier = Modifier) {
                             style = MaterialTheme.typography.titleLarge
                         )
                     }
+                    // Isi form (langsung di bawah header)
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        horizontalAlignment = Alignment.Start,
+                        verticalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        // Nama
+                        Text(text = "NAMA LENGKAP", color = labelColorOnWhite)
+                        OutlinedTextField(
+                            value = namaInput,
+                            onValueChange = { namaInput = it },
+                            singleLine = true,
+                            modifier = Modifier.fillMaxWidth(),
+                            placeholder = { Text("Isi nama lengkapnya") }
+                        )
+
 
 
 
