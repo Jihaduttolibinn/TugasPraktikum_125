@@ -200,6 +200,35 @@ fun FormDataDiriStyled(modifier: Modifier = Modifier) {
                         ) {
                             Text(text = "Submit", color = Color.White)
                         }
+                        Spacer(modifier = Modifier.height(8.dp))
+
+                        // Hasil — sekarang berada di dalam card, tepat di bawah form
+                        if (isSubmitted) {
+                            ElevatedCard(
+                                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+                                colors = CardDefaults.cardColors(containerColor = cardResultBg),
+                                shape = RoundedCornerShape(12.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = 8.dp)
+                            ) {
+                                Column(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(horizontal = 16.dp, vertical = 12.dp),
+                                    verticalArrangement = Arrangement.spacedBy(6.dp)
+                                ) {
+                                    Text(text = "Nama   : ${submittedNama.ifBlank { "-" }}", color = cardResultText)
+                                    Text(text = "Gender : ${submittedGender.ifBlank { "-" }}", color = cardResultText)
+                                    Text(text = "Status : ${submittedStatus.ifBlank { "-" }}", color = cardResultText)
+                                    Text(text = "Alamat : ${submittedAlamat.ifBlank { "-" }}", color = cardResultText)
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
 
 
 
