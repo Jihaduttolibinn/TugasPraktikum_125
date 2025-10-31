@@ -179,6 +179,28 @@ fun FormDataDiriStyled(modifier: Modifier = Modifier) {
                             modifier = Modifier.fillMaxWidth(),
                             placeholder = { Text("Alamat") }
                         )
+                        Spacer(modifier = Modifier.height(6.dp))
+
+                        // Submit
+                        Button(
+                            onClick = {
+                                // simpan data ke state submitted dan tandai sudah submit
+                                submittedNama = namaInput.trim()
+                                submittedGender = genderInput
+                                submittedStatus = statusInput
+                                submittedAlamat = alamatInput.trim()
+                                isSubmitted = true
+                            },
+                            enabled = namaInput.isNotBlank() && alamatInput.isNotBlank(),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(48.dp)
+                                .clip(RoundedCornerShape(24.dp)),
+                            colors = ButtonDefaults.buttonColors(containerColor = primaryPurple)
+                        ) {
+                            Text(text = "Submit", color = Color.White)
+                        }
+
 
 
 
